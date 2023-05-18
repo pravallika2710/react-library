@@ -11,8 +11,8 @@ const App = () => {
 
   return (
     <div>
-      <Button label={"test"}/>
-      <Slider />
+      <Button label={"Custom Button"}  onClick={() => console.log("button click")}/>
+      <Slider value={value} handleChange={handleChange}/>
     </div>
   )
 }

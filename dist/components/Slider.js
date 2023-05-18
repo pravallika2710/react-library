@@ -30,7 +30,7 @@ const CustomizedSlider = (0, _styles.styled)(_Slider.default, {
     }
   };
 });
-const FormSlider = props => {
+const CustomSlider = props => {
   return /*#__PURE__*/_react.default.createElement(CustomizedSlider, {
     value: props.value,
     onChange: props.handleChange,
@@ -40,5 +40,5 @@ const FormSlider = props => {
     style: props.style
   });
 };
-var _default = FormSlider;
+var _default = CustomSlider;
 exports.default = _default;

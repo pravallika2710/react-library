@@ -1,19 +1,32 @@
 import React from 'react'
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
-const Button = (props) => {
+const CustomizedButton = styled(Button, {
+  shouldForwardProp: (prop) => !["style"].includes(prop),
+})(({ style }) => ({
+  color: style && style.color ? style.color : 'white',
+  backgroundColor: style && style.backgroundColor ? style.backgroundColor : '#1A0F7A',
+  margin: style && style.margin ? style.margin : '2px 2px 2px 2px',
+  border: style && style.border ? style.border : '1px solid',
+  '&:hover': {
+    backgroundColor: style && style.backgroundColor ? style.backgroundColor : '#584FA4',
+  },
+  "&:disabled": {
+    backgroundColor: style && style.diabledBackgroundColor ? style.diabledBackgroundColor : 'white',
+    color: style && style.diabledColor ? style.diabledColor : 'black',
+  }
+}))
+
+const CustomButton = (props) => {
   return (
-    <button 
-    className={`btn btn--${props.kind} CTA`}
-      data-id={props.id}
-      type={props.type}
-      name={props.name}
-      value={props.value}
+    <CustomizedButton
+      variant={props.variant}
+      size={props.size ?? 'medium'}
+      onClick={props.onClick}
       disabled={props.disabled}
-      onClick={props.handleClick}
-      >
-      <h4>{props.label}</h4>
-    </button>
+    >{props.label}</CustomizedButton>
   )
 }
 
-export default Button
+export default CustomButton

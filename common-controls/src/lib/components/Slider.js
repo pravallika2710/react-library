@@ -19,8 +19,7 @@ const CustomizedSlider = styled(Slider, {
   },
 }));
 
- const FormSlider = (props) => {
-  
+ const CustomSlider = (props) => {
   return (
     <CustomizedSlider
       value={props.value}
@@ -33,4 +32,4 @@ const CustomizedSlider = styled(Slider, {
   );
 }
 
-export default FormSlider
+export default CustomSlider
